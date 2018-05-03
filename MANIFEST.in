@@ -19,5 +19,5 @@ recursive-include SolvingMicroDSOPs *
 recursive-include Testing *
 
 # except build files
-global-exclude  *.pyc
-global-exclude . *.*~
+global-exclude *.pyc
+global-exclude *.*~
