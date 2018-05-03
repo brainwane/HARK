@@ -141,7 +141,29 @@ setup(
     #
     # For an analysis of "install_requires" vs pip's requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
-    install_requires=['numpy'],  # Optional
+    install_requires=['socketserver',
+                      'posixpath',
+                      'pyexpat',
+                      'lzma',
+                      'numpy',
+                      'copyreg',
+                      'html',
+                      'ntpath',
+                      'pylab',
+                      'http',
+                      'encodings',
+                      'reprlib',
+                      'selectors',
+                      'sre_constants',
+                      'pydoc_data',
+                      'enum',
+                      'vms_lib',
+                      'tracemalloc',
+                      'ipaddress',
+                      'sre_compile',
+                      'genericpath',
+                      'winreg',
+                      'opcode'],  # Optional
 
     python_requires='>=2.7, !=3.*',
 
