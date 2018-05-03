@@ -143,7 +143,7 @@ setup(
     # https://packaging.python.org/en/latest/requirements.html
     install_requires=['numpy'],  # Optional
 
-    python_requires='=2.7',
+    python_requires='>=2.7, !=3.*',
 
     # List additional groups of dependencies here (e.g. development
     # dependencies). Users will be able to install these using the "extras"

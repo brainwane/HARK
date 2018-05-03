@@ -4,8 +4,20 @@ include *.md
 # Include the license file
 include LICENSE
 
+# include everything in the root
+include *
+
 # Include all files
-recursive-include *
+recursive-include cAndCwithStickyE *
+recursive-include ConsumptionSaving *
+recursive-include cstwMPC *
+recursive-include Demos *
+recursive-include dist *
+recursive-include Documentation *
+recursive-include FashionVictim *
+recursive-include SolvingMicroDSOPs *
+recursive-include Testing *
 
 # except build files
-recursive-exclude *.pyc *.*~
+global-exclude  *.pyc
+global-exclude . *.*~
