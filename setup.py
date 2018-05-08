@@ -144,7 +144,9 @@ setup(
     install_requires=['numpy',
                       'matplotlib',
                       'Sphinx',
-                      'numpydoc',],  # Optional
+                      'numpydoc',
+                      'dill',
+                      'joblib',],  # Optional
 
     python_requires='>=2.7, !=3.*',
 

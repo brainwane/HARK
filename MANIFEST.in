@@ -7,16 +7,21 @@ include LICENSE
 # include everything in the root
 include *
 
-# Include all files
-recursive-include cAndCwithStickyE *
+# Include most files
 recursive-include ConsumptionSaving *
-recursive-include cstwMPC *
 recursive-include Demos *
 recursive-include dist *
 recursive-include Documentation *
 recursive-include FashionVictim *
 recursive-include SolvingMicroDSOPs *
 recursive-include Testing *
+
+# We plan to store the full archive of a paper implemented in Econ-ARK
+# separately from the codebase that reproduces the paper's results.
+
+# At present we have not separated these things out for either the
+# cAndCwithStickyE paper or the cstwMPC paper.
+# Therefore those papers are left out in the current version.
 
 # except build files
 global-exclude *.pyc
