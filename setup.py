@@ -85,6 +85,8 @@ setup(
     # above.
     author_email='ccarroll@llorracc.org',  # Optional
 
+
+    license='Apache',
     # Classifiers help users find your project by categorizing it.
     #
     # For a list of valid classifiers, see https://pypi.org/classifiers/
