@@ -39,7 +39,7 @@ University of Delaware
 2 General Purpose Tools
  2.1 HARKcore
  2.2 HARK.utilities
- 2.3 HARKinterpolation
+ 2.3 HARK.interpolation
  2.4 HARK.simulation
  2.5 HARKestimation
  2.6 HARK.parallel
@@ -192,7 +192,7 @@ non-parametric kernel regression), functions to create and manipulate discrete
 approximations to continuous distributions, or classes for constructing
 interpolated approximations to non-parametric functions. Tool modules
 generally reside in HARK's root directory and have names like HARK.simulation
-and HARKinterpolation; they do not necessarily do anything when run.
+and HARK.interpolation; they do not necessarily do anything when run.
 
 Model modules specify particular economic models, including classes to
 represent agents in the model (and the "market structure" in which they
@@ -341,9 +341,9 @@ discretization yields a sufficient approximation to the full distribution. See
 [here](https://econ-ark.github.io/HARK/generated/HARKutilities.html) for
 online documentation.
 
-#### 2.3  HARKinterpolation
+#### 2.3  HARK.interpolation
 
-The HARKinterpolation module defines classes for representing interpolated
+The HARK.interpolation module defines classes for representing interpolated
 function approximations. Interpolation methods in HARK all inherit from a
 superclass such as HARKinterpolator1D or HARKinterpolator2D, wrapper classes
 that ensures interoperability across interpolation methods. For example,
@@ -866,7 +866,7 @@ The easiest and most straightforward way to contribute to HARK is by writing
 new general purpose tools for inclusion in one of the top-level modules. This
 might be a commonly known data analysis technique (e.g. a kernel density
 estimator) for HARK.utilities, an optimization method (local or global) for
-HARKestimation, an interpolation method for HARKinterpolation, etc. If you've
+HARKestimation, an interpolation method for HARK.interpolation, etc. If you've
 found a technique useful in your own research and believe it could be of use
 to others on entirely different projects, then it probably belongs in HARK.
 Likewise, if you read through a HARK module expecting to find a certain tool
@@ -1138,12 +1138,12 @@ quite quickly; for example, we provide a rudimentary non-parametric kernel
 regression function, but have not written a kernel density estimator to
 generate PDFs from data.
 
-The classes currently in HARKinterpolation are all variations on linear (or
+The classes currently in HARK.interpolation are all variations on linear (or
 cubic) spline interpolation, and each is specifically written for a fixed
 number of dimensions. As these methods use full tensor grids, they are highly
 impractical for representing functions in higher dimensions, suffering greatly
 from the curse of dimensionality.[37](HARKmanual37.html#fn37x0) We are quite
-confident that HARKinterpolation will soon include techniques more applicable
+confident that HARK.interpolation will soon include techniques more applicable
 to high dimensional state spaces, including Smolnyak interpolation, other
 (adaptive) sparse grid methods, and regression-based interpolation. For lower-
 dimensional spaces, HARK will also soon provide Delaunay interpolation
