@@ -8,11 +8,13 @@ factor for an age-varying sequence of discount factors.  The estimation uses a
 consumption-saving model with idiosyncratic shocks to permanent and transitory
 income as defined in ConsIndShockModel.
 '''
-# Import the HARK library.  The assumption is that this code is in a folder
-# contained in the HARK folder.
+# Import the HARK library.  The assumption is that StructEstimation.py is in a
+# folder contained in a folder which has the HARK folder as a peer:
+# ./HARK/
+# ./Demos/SolvingMicroDSOPs/StructEstimation.py
 import sys
 import os
-sys.path.insert(0, os.path.abspath('../'))
+sys.path.insert(0, os.path.abspath('../../HARK/'))
 sys.path.insert(0, os.path.abspath('../ConsumptionSaving'))
 
 import EstimationParameters as Params           # Parameters for the consumer type and the estimation

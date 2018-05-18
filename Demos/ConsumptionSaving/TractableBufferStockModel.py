@@ -23,7 +23,7 @@ in the HARK framework, as shown below.
 import sys
 import os
 import numpy as np
-sys.path.insert(0, os.path.abspath('../'))
+sys.path.insert(0, os.path.abspath('../../HARK/'))
 
 from HARKcore import AgentType, NullFunc, Solution
 from HARKutilities import warnings  # Because of "patch" to warnings modules

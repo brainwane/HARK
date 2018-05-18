@@ -5,7 +5,7 @@ basic solver.  Also includes a subclass of Market called CobbDouglas economy,
 used for solving "macroeconomic" models with aggregate shocks.
 '''
 import sys
-sys.path.insert(0,'../')
+sys.path.insert(0, '../../HARK/')
 
 import numpy as np
 import scipy.stats as stats

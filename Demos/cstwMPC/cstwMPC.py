@@ -2,11 +2,13 @@
 A second stab / complete do-over of cstwMPC.  Steals some bits from old version.
 '''
 
-# Import the HARK library.  The assumption is that this code is in a folder
-# contained in the HARK folder. Also import ConsumptionSavingModel
+# Import the HARK library.  The assumption is that cstwMPC.py is in a
+# folder contained in a folder which has the HARK folder as a peer:
+# ./HARK/
+# ./Demos/cstwMPC/cstwMPC.py
 import sys
 import os
-sys.path.insert(0, os.path.abspath('../'))
+sys.path.insert(0, os.path.abspath('../../HARK/'))
 sys.path.insert(0, os.path.abspath('../ConsumptionSaving'))
 
 import numpy as np

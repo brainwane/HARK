@@ -6,11 +6,13 @@ ConsIndShockModel; the macro model is ConsAggShockModel.  See SetupParamsCSTW
 for parameters and execution options.
 '''
 
-# Import the HARK library.  The assumption is that this code is in a folder
-# contained in the HARK folder. Also import ConsumptionSavingModel
+# Import the HARK library.  The assumption is that cstwMPCold.py is in a
+# folder contained in a folder which has the HARK folder as a peer:
+# ./HARK/
+# ./Demos/cstwMPC/cstwMPCold.py
 import sys
 import os
-sys.path.insert(0, os.path.abspath('../'))
+sys.path.insert(0, os.path.abspath('../../HARK/'))
 sys.path.insert(0, os.path.abspath('../ConsumptionSaving'))
 
 import numpy as np
