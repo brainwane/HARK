@@ -70,8 +70,8 @@ to interact with (and potentially contribute to) HARK.
 To prepare to contribute to HARK, follow these simple steps:
 
   1. Make a GitHub account: Go to [github.com](https://www.github.com); the homepage should prompt you to choose a username and password. Signing up is quick, easy, and free.[3](ContributingToHARK4.html#fn3x0)
-  2. Install GitHub Desktop: Go to [desktop.github.com](https://desktop.github.com/) and download the Desktop application for your operating system, then install it. After opening Desktop for the first time, enter your GitHub login to connect it to your account. 
-  3. Fork the HARK repository: Go to the [HARK repository page](https://github.com/econ-ark/HARK), click on the Fork button in the upper right, and choose to fork HARK to your own GitHub account. This creates a new repository identical to the one hosted by Econ-Ark at the moment you fork it, but hosted on your account instead. 
+  2. Install GitHub Desktop: Go to [desktop.github.com](https://desktop.github.com/) and download the Desktop application for your operating system, then install it. After opening Desktop for the first time, enter your GitHub login to connect it to your account.
+  3. Fork the HARK repository: Go to the [HARK repository page](https://github.com/econ-ark/HARK), click on the Fork button in the upper right, and choose to fork HARK to your own GitHub account. This creates a new repository identical to the one hosted by Econ-Ark at the moment you fork it, but hosted on your account instead.
   4. Add the repository to Desktop: Open GitHub Desktop, click on the ![+  ](ContributingToHARK0x.png) icon in the upper left, and select clone. Find the repository named yourusername/HARK, click the Clone button at the bottom of the dialogue window, and choose a directory on your local machine.
 
 You now control a "fork" of the main HARK repository, hosted by GitHub, and
@@ -83,8 +83,8 @@ copy of your fork do not get automatically sent to the remote copy on GitHub
 for public viewing. To make changes to your fork on GitHub, follow these
 steps:
 
-  1. Make local changes: Edit your local copy of the repository in any way you'd like: add or delete lines from existing files; add, delete, or rename entire files or directories. 
-  2. Commit local changes: Open the repository in GitHub Desktop and click on the Changes tab. In the lower left, provide a short description of the changes made in the Summary field, and (optionally) longer comments about these changes in the Description field. Click the check-mark Commit button. 
+  1. Make local changes: Edit your local copy of the repository in any way you'd like: add or delete lines from existing files; add, delete, or rename entire files or directories.
+  2. Commit local changes: Open the repository in GitHub Desktop and click on the Changes tab. In the lower left, provide a short description of the changes made in the Summary field, and (optionally) longer comments about these changes in the Description field. Click the check-mark Commit button.
   3. Push the commit: Click on the Sync button near the upper right to "push" your local commits to the remote server; this will also pull down remote commits from other contributors to your fork that were made since the last time you synced.
 
 The left hand panel of the Changes tab has a summary of the files that have
@@ -106,9 +106,9 @@ Suppose you have mucked about in your fork for a while and have made changes
 to HARK that you think should be included in the main repository hosted by
 Econ-Ark. To make your dream a reality, follow these steps:
 
-  1. Isolate the changes: If you mucked around for quite a while, making various changes here and there, and then later made some contribution that you want to include in the main repository, you should isolate the desired changes in a new branch of your fork. Make a new branch by clicking the button toward the upper left of GitHub Desktop, revert that branch to the commit just before you forked from the main repository,[6](ContributingToHARK7.html#fn6x0) then edit this branch to include only the changes you want to push to the main repository. 
-  2. Issue a pull request: Go to [HARK's GitHub page](https://github.com/econ-ark/HARK) and click the "New pull request" button. Click the text that says "compare across forks", and select econ-ark/HARK as the base fork, master as the base, your fork as the head fork, and the branch to be merged as the "compare". In the boxes below, give a name to your pull request and provide sufficient comments about your contribution so that a development team member can understand what you've done. Click the "Create pull request" button. 
-  3. Be patient: Someone from the development team will look at your contribution and either merge it into the main repository or return it with comments. See section 1.3 for procedures followed by the HARK team when evaluating outside contributions. 
+  1. Isolate the changes: If you mucked around for quite a while, making various changes here and there, and then later made some contribution that you want to include in the main repository, you should isolate the desired changes in a new branch of your fork. Make a new branch by clicking the button toward the upper left of GitHub Desktop, revert that branch to the commit just before you forked from the main repository,[6](ContributingToHARK7.html#fn6x0) then edit this branch to include only the changes you want to push to the main repository.
+  2. Issue a pull request: Go to [HARK's GitHub page](https://github.com/econ-ark/HARK) and click the "New pull request" button. Click the text that says "compare across forks", and select econ-ark/HARK as the base fork, master as the base, your fork as the head fork, and the branch to be merged as the "compare". In the boxes below, give a name to your pull request and provide sufficient comments about your contribution so that a development team member can understand what you've done. Click the "Create pull request" button.
+  3. Be patient: Someone from the development team will look at your contribution and either merge it into the main repository or return it with comments. See section 1.3 for procedures followed by the HARK team when evaluating outside contributions.
 
 #### 1.3  Submission Approval Process
 
@@ -130,13 +130,13 @@ After creating a pull request to submit your contribution, it will be
 evaluated by one or more members of the HARK team. Criteria that the HARK team
 will consider when choosing whether to accept a submission include:
 
-  1. Does the contribution break previous code? If you change or expand an existing function, you should make sure that this does not cause some models or applications to work incorrectly. In the near future, HARK will have a core set of tests to run to check for full compatibility. 
-  2. Is the code well documented? Code submissions should have properly formatted docstrings for each new function, class, method, and module (see section 1.5) and enough comments for a reader to follow the algorithm. 
-  3. Is the contribution relevant? The development team intends for HARK to be diverse, but not everything goes in HARK. If your submission concerns a representative agent model or a method for estimating a reduced form model, then it probably doesn't belong in HARK. 
+  1. Does the contribution break previous code? If you change or expand an existing function, you should make sure that this does not cause some models or applications to work incorrectly. In the near future, HARK will have a core set of tests to run to check for full compatibility.
+  2. Is the code well documented? Code submissions should have properly formatted docstrings for each new function, class, method, and module (see section 1.5) and enough comments for a reader to follow the algorithm.
+  3. Is the contribution relevant? The development team intends for HARK to be diverse, but not everything goes in HARK. If your submission concerns a representative agent model or a method for estimating a reduced form model, then it probably doesn't belong in HARK.
   4. Is the code demonstrated with an example? If your solve a new model in HARK, you should include a set of example parameters for other users to easily test. If you've contributed a new function, consider providing a snippet of code demonstrating its use.[8](ContributingToHARK9.html#fn8x0)
-  5. Is the code correct? Your code should actually do what it claims to do. 
-  6. Does the code use HARK conventions? To the best of your ability, contributions to HARK should follow the style guidelines in section 1.4. We don't demand perfection, as these are guidelines rather than rules. 
-  7. Is the code well integrated in HARK? In the beta release of HARK, we have tried to present a "taxonomy" of consumption-saving models that build up from each other. When possible, new models in HARK should try to continue this pattern. A submission that introduces a model in a new module that could have easily been made as an extension of an existing module might be rejected. However, we acknowledge that there is value in providing a solver for a new model, and that a future contributor might make her mark by integrating it into the existing hierarchy. 
+  5. Is the code correct? Your code should actually do what it claims to do.
+  6. Does the code use HARK conventions? To the best of your ability, contributions to HARK should follow the style guidelines in section 1.4. We don't demand perfection, as these are guidelines rather than rules.
+  7. Is the code well integrated in HARK? In the beta release of HARK, we have tried to present a "taxonomy" of consumption-saving models that build up from each other. When possible, new models in HARK should try to continue this pattern. A submission that introduces a model in a new module that could have easily been made as an extension of an existing module might be rejected. However, we acknowledge that there is value in providing a solver for a new model, and that a future contributor might make her mark by integrating it into the existing hierarchy.
   8. Is this already in HARK? If your contribution is already in HARK, then it will almost certainly be rejected. Of course, if you submit a version that dominates the existing implementation (or even one that works better in a well described, non-trivial set of circumstances), it belongs in HARK.
 
 The HARK team intends to release more specific guidelines in the near future,
@@ -154,9 +154,9 @@ Object naming conventions in HARK are fairly different than existing
 standards, and differ somewhat between tool modules vs model or application
 modules. The following conventions apply throughout HARK:
 
-  * Functions and methods are always in "camel case": no underscores, first letter is lower case, first letter of each subsequent word is capitalized. E.g. approxLognormal. 
+  * Functions and methods are always in "camel case": no underscores, first letter is lower case, first letter of each subsequent word is capitalized. E.g. approxLognormal.
   * Function and method names should accurately and concisely describe what the function does; the first word in the name must be a verb.[10](ContributingToHARK11.html#fn10x0)
-  * Variable and class names should not have a verb as their first word. 
+  * Variable and class names should not have a verb as their first word.
   * Class names should use no underscores and capitalize the first letter of each word; moreover, a class name must include a noun. E.g. ConsPerfForesightSolver.
 
 When naming variables in model modules, the HARK team strongly discourages
@@ -209,7 +209,7 @@ model. Your bank account routing number.
 
 """
 
-  * The line directly below the declaration of a function, method or class should begin a docstring describing that object. As with modules, the first sentence should concisely summarize the function or class, as it might be included in an index or summary. For functions and methods, the docstring should be formatted as: 
+  * The line directly below the declaration of a function, method or class should begin a docstring describing that object. As with modules, the first sentence should concisely summarize the function or class, as it might be included in an index or summary. For functions and methods, the docstring should be formatted as:
 
 def functionName(input1,input2):
 
