@@ -42,7 +42,7 @@ University of Delaware
  2.3 HARKinterpolation
  2.4 HARKsimulation
  2.5 HARKestimation
- 2.6 HARKparallel
+ 2.6 HARK.parallel
 3 Microeconomics: the AgentType Class
  3.1 Attributes of an AgentType
  3.2 A Universal Solver
@@ -401,10 +401,10 @@ genetic algorithms, simulated annealing, and differential evolution. See
 [here](https://econ-ark.github.io/HARK/generated/HARKestimation.html) for full
 documentation.
 
-#### 2.6  HARKparallel
+#### 2.6  HARK.parallel
 
 By default, processes in Python are single-threaded, using only a single CPU
-core. The HARKparallel module provides basic tools for using multiple CPU
+core. The HARK.parallel module provides basic tools for using multiple CPU
 cores simultaneously, with minimal effort.[8](HARKmanual8.html#fn8x0) In
 particular, it provides the function multiThreadCommands, which takes two
 arguments: a list of AgentTypes and a list of commands as strings; each
@@ -412,7 +412,7 @@ command should be a method of the AgentTypes. The function simply distributes
 the AgentTypes across threads on different cores and executes each command in
 order, returning no output (the AgentTypes themselves are changed by running
 the commands). Equivalent results would be achieved by simply looping over
-each type and running each method in the list. Indeed, HARKparallel also has a
+each type and running each method in the list. Indeed, HARK.parallel also has a
 function called multiThreadCommandsFake that does just that, with identical
 syntax to multiThreadCommands; multithreading in HARK can thus be easily
 turned on and off.[9](HARKmanual9.html#fn9x0) The module also has functions
@@ -1149,7 +1149,7 @@ to high dimensional state spaces, including Smolnyak interpolation, other
 dimensional spaces, HARK will also soon provide Delaunay interpolation
 classes.
 
-The HARKparallel module currently provides a simple interface for handling ex-
+The HARK.parallel module currently provides a simple interface for handling ex-
 ante heterogeneity among agents. While useful for speeding up moderately-sized
 problems, the libraries used are only able to access the CPU of the local
 machine running the code. In the very near future, the HARK team will provide
