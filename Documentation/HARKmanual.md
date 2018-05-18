@@ -41,7 +41,7 @@ University of Delaware
  2.2 HARK.utilities
  2.3 HARK.interpolation
  2.4 HARK.simulation
- 2.5 HARKestimation
+ 2.5 HARK.estimation
  2.6 HARK.parallel
 3 Microeconomics: the AgentType Class
  3.1 Attributes of an AgentType
@@ -388,10 +388,10 @@ and transitory income shocks as well as unemployment events. See [here](https
 ://econ-ark.github.io/HARK/generated/HARKsimulation.html) for online
 documentation.
 
-#### 2.5  HARKestimation
+#### 2.5  HARK.estimation
 
 Methods for optimizing an objective function for the purposes of estimating a
-model can be found in HARKestimation. As of this writing, the implementation
+model can be found in HARK.estimation. As of this writing, the implementation
 includes only minimization by the Nelder-Mead simplex method, minimization by
 a derivative-free Powell method variant, and two small tools for resampling
 data (i.e. for a bootstrap); the minimizers are merely convenience wrappers
@@ -866,7 +866,7 @@ The easiest and most straightforward way to contribute to HARK is by writing
 new general purpose tools for inclusion in one of the top-level modules. This
 might be a commonly known data analysis technique (e.g. a kernel density
 estimator) for HARK.utilities, an optimization method (local or global) for
-HARKestimation, an interpolation method for HARK.interpolation, etc. If you've
+HARK.estimation, an interpolation method for HARK.interpolation, etc. If you've
 found a technique useful in your own research and believe it could be of use
 to others on entirely different projects, then it probably belongs in HARK.
 Likewise, if you read through a HARK module expecting to find a certain tool
@@ -1122,7 +1122,7 @@ system for specifying the state of networks and how connections are formed and
 broken. HARKcore might also develop a framework more suited to industrial
 organization models and dynamic games.[36](HARKmanual36.html#fn36x0)
 
-The HARKestimation module in particular is very sparsely populated, with its
+The HARK.estimation module in particular is very sparsely populated, with its
 functions mostly serving as wrappers for "off the shelf" optimization methods
 from scipy.optimize. There are plenty of non-standard or more complex
 optimization techniques available, including global and/or stochastic search
