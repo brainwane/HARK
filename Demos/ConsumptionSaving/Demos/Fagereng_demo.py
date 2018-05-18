@@ -36,6 +36,7 @@ drop_corner : Boolean for whether to include target MPC in the top left corner,
 import sys
 import os
 sys.path.insert(0, os.path.abspath('../'))
+sys.path.insert(0, os.path.abspath('../../../'))
 sys.path.insert(0, os.path.abspath('../../../HARK/'))
 sys.path.insert(0, os.path.abspath('../../cstwMPC'))
 
@@ -43,7 +44,7 @@ import numpy as np
 from copy import deepcopy
 
 from HARKutilities import approxUniform, getPercentiles
-from HARKparallel import multiThreadCommands
+from HARK.parallel import multiThreadCommands
 from HARKestimation import minimizeNelderMead
 from ConsIndShockModel import IndShockConsumerType
 from SetupParamsCSTW import init_infinite # dictionary with most ConsumerType parameters
