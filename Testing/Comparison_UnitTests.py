@@ -12,7 +12,7 @@ should yield the same output.  The code will pass these tests if and only if the
 import sys
 import os
 sys.path.insert(0, os.path.abspath('../'))
-sys.path.insert(0, os.path.abspath('../ConsumptionSaving'))
+sys.path.insert(0, os.path.abspath('../Demos/ConsumptionSaving'))
 sys.path.insert(0, os.path.abspath('./'))
 
 # Bring in modules we need
