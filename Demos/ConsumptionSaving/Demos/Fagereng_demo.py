@@ -36,7 +36,7 @@ drop_corner : Boolean for whether to include target MPC in the top left corner,
 import sys
 import os
 sys.path.insert(0, os.path.abspath('../'))
-sys.path.insert(0, os.path.abspath('../..'))
+sys.path.insert(0, os.path.abspath('../../../HARK/'))
 sys.path.insert(0, os.path.abspath('../../cstwMPC'))
 
 import numpy as np

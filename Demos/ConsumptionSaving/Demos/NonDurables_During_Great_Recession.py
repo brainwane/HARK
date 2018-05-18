@@ -28,7 +28,7 @@ So we need to prepare the parameters to create that ConsumerType, and then creat
 import sys
 import os
 sys.path.insert(0, os.path.abspath('../')) #Path to ConsumptionSaving folder
-sys.path.insert(0, os.path.abspath('../../'))
+sys.path.insert(0, os.path.abspath('../../../HARK/'))
 sys.path.insert(0, os.path.abspath('../../cstwMPC')) #Path to cstwMPC folder
 import numpy as np
 from copy import deepcopy

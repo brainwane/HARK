@@ -7,7 +7,7 @@ and allows (log) persistent income to follow an AR1 process rather than random w
 
 import sys
 import os
-sys.path.insert(0, os.path.abspath('../'))
+sys.path.insert(0, os.path.abspath('../../HARK/'))
 sys.path.insert(0, os.path.abspath('./'))
 
 from copy import deepcopy

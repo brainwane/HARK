@@ -7,7 +7,7 @@ preferences each style), and pay switching costs if they change.
 
 import sys
 import os
-sys.path.insert(0, os.path.abspath('../'))
+sys.path.insert(0, os.path.abspath('../../HARK/'))
 
 from HARKcore import AgentType, Solution, NullFunc
 from HARKinterpolation import LinearInterp
