@@ -37,7 +37,7 @@ University of Delaware
  1.2 Structure of HARK
  1.3 Other Resources
 2 General Purpose Tools
- 2.1 HARKcore
+ 2.1 HARK.core
  2.2 HARK.utilities
  2.3 HARK.interpolation
  2.4 HARK.simulation
@@ -253,11 +253,11 @@ time, while others are quite large. We expect that all of these modules will
 grow considerably in the near future, as new tools are "low hanging fruit" for
 contribution to the project.[6](HARKmanual6.html#fn6x0)
 
-#### 2.1  HARKcore
+#### 2.1  HARK.core
 
 A key goal of the project is to create modularity and interoperability between
 models, making them easy to combine, adapt, and extend. To this end, the
-HARKcore module specifies a framework for economic models in HARK, creating a
+HARK.core module specifies a framework for economic models in HARK, creating a
 common structure for them on two levels that can be called "microeconomic" and
 "macroeconomic".
 
@@ -292,7 +292,7 @@ accordingly, then their collective actions generate a sequence of
 macroeconomic outcomes that justify the belief in that rule. For a more
 complete description, see section 4.
 
-Beyond the model frameworks, HARKcore also defines a "supersuperclass" called
+Beyond the model frameworks, HARK.core also defines a "supersuperclass" called
 HARKobject. When solving a dynamic microeconomic model with an infinite
 horizon (or searching for a dynamic general equilibrium), it is often required
 to consider whether two solutions are sufficiently close to each other to
@@ -423,7 +423,7 @@ ark.github.io/HARK/generated/HARKparallel.html) for full documentation.
 ### 3  Microeconomics: the AgentType Class
 
 The core of our microeconomic dynamic optimization framework is a flexible
-object-oriented representation of economic agents. The HARKcore module defines
+object-oriented representation of economic agents. The HARK.core module defines
 a superclass called AgentType; each model defines a subclass of AgentType,
 specifying additional model-specific features and methods while inheriting the
 methods of the superclass. Most importantly, the method solve acts as a
@@ -662,7 +662,7 @@ agents' beliefs about these macroeconomic objects, their individual behavior,
 and the realizations of the macroeconomic objects that result from individual
 choices.
 
-The Market class in HARKcore provides a framework for such macroeconomic
+The Market class in HARK.core provides a framework for such macroeconomic
 models, with a solve method that searches for a dynamic general equilibrium.
 An instance of Market includes a list of AgentTypes that compose the economy,
 a method for transforming microeconomic outcomes (states, controls, and/or
@@ -1114,12 +1114,12 @@ researchers to contribute their code to the project.
 
 #### 6.1  Future Tools
 
-The current frameworks in HARKcore concern agents who have "isolated" dynamic
+The current frameworks in HARK.core concern agents who have "isolated" dynamic
 problems or interact with each other only through aggregate outcomes to which
 they contribute atomically. We hope to eventually provide a framework for
 models in which agents directly interact with each other; this may include a
 system for specifying the state of networks and how connections are formed and
-broken. HARKcore might also develop a framework more suited to industrial
+broken. HARK.core might also develop a framework more suited to industrial
 organization models and dynamic games.[36](HARKmanual36.html#fn36x0)
 
 The HARK.estimation module in particular is very sparsely populated, with its

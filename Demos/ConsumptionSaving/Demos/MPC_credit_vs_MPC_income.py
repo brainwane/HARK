@@ -26,7 +26,6 @@ import sys
 import os
 sys.path.insert(0, os.path.abspath('../')) #Path to ConsumptionSaving folder
 sys.path.insert(0, os.path.abspath('../../../'))
-sys.path.insert(0, os.path.abspath('../../../HARK/'))
 
 ## Import the HARK ConsumerType we want
 ## Here, we bring in an agent making a consumption/savings decision every period, subject

@@ -8,7 +8,6 @@ It currently only two models:
 '''
 import sys
 sys.path.insert(0, '../../')
-sys.path.insert(0, '../../HARK/')
 
 import numpy as np
 from HARK.utilities import approxMeanOneLognormal

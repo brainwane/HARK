@@ -10,7 +10,6 @@ from __future__ import division      # Use new division function
 import sys
 import os
 sys.path.insert(0, os.path.abspath('../../'))
-sys.path.insert(0, os.path.abspath('../../HARK/'))
 
 
 # The following libraries are part of the standard python distribution

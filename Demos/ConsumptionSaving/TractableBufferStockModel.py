@@ -24,9 +24,8 @@ import sys
 import os
 import numpy as np
 sys.path.insert(0, os.path.abspath('../../'))
-sys.path.insert(0, os.path.abspath('../../HARK/'))
 
-from HARKcore import AgentType, NullFunc, Solution
+from HARK.core import AgentType, NullFunc, Solution
 from HARK.utilities import warnings  # Because of "patch" to warnings modules
 from HARK.utilities import CRRAutility, CRRAutilityP, CRRAutilityPP, CRRAutilityPPP, CRRAutilityPPPP, CRRAutilityP_inv, CRRAutility_invP, CRRAutility_inv
 from HARK.interpolation import CubicInterp
