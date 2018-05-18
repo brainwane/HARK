@@ -25,6 +25,7 @@ The first step is to create the ConsumerType we want to solve the model for.
 import sys
 import os
 sys.path.insert(0, os.path.abspath('../')) #Path to ConsumptionSaving folder
+sys.path.insert(0, os.path.abspath('../../../'))
 sys.path.insert(0, os.path.abspath('../../../HARK/'))
 
 ## Import the HARK ConsumerType we want
@@ -179,8 +180,8 @@ def FirstDiffMPC_Credit(x):
 
 ## Now, plot the functions we want
 
-# Import a useful plotting function from HARKutilities
-from HARKutilities import plotFuncs
+# Import a useful plotting function from HARK.utilities
+from HARK.utilities import plotFuncs
 import pylab as plt # We need this module to change the y-axis on the graphs
 
 
