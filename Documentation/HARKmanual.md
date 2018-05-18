@@ -38,7 +38,7 @@ University of Delaware
  1.3 Other Resources
 2 General Purpose Tools
  2.1 HARKcore
- 2.2 HARKutilities
+ 2.2 HARK.utilities
  2.3 HARKinterpolation
  2.4 HARKsimulation
  2.5 HARKestimation
@@ -174,11 +174,11 @@ This imports the module and gives it a local name of import_name. We can
 access a function within this module by simply typing:
 import_name.function_name(). The following example will illustrate the usage
 of these commands. CRRAutility is the function object for calculating CRRA
-utility supplied by HARKutilities module. CRRAutility is called attributes of
-the module HARKutilities. In order to calculate CRRA utility with a
+utility supplied by HARK.utilities module. CRRAutility is called attributes of
+the module HARK.utilities. In order to calculate CRRA utility with a
 consumption of 1 and a coefficient of risk aversion of 2 we run:
 
-import HARKutilities as Hutil
+import HARK.utilities as Hutil
 
 Hutil.CRRAutility(1,2)
 
@@ -312,14 +312,14 @@ solution matters when comparing the distance between two instances of
 ConsumerSolution. See [here](https://econ-
 ark.github.io/HARK/generated/HARKcore.html) for online documentation.
 
-#### 2.2  HARKutilities
+#### 2.2  HARK.utilities
 
-The HARKutilities module carries a double meaning in its name, as it contains
+The HARK.utilities module carries a double meaning in its name, as it contains
 both utility functions (and their derivatives, inverses, and combinations
 thereof) in the economic modeling sense as well as utilities in the sense of
 general tools. Utility functions included at this time are constant relative
 risk aversion and constant absolute risk aversion. Other functions in
-HARKutilities include some data manipulation tools (e.g. for calculating an
+HARK.utilities include some data manipulation tools (e.g. for calculating an
 average of data conditional on being within a percentile range of different
 data), functions for constructing discrete state space grids, convenience
 functions for retrieving information about functions, and basic plotting tools
@@ -865,7 +865,7 @@ yourself with its features and models by looking at the source code.
 The easiest and most straightforward way to contribute to HARK is by writing
 new general purpose tools for inclusion in one of the top-level modules. This
 might be a commonly known data analysis technique (e.g. a kernel density
-estimator) for HARKutilities, an optimization method (local or global) for
+estimator) for HARK.utilities, an optimization method (local or global) for
 HARKestimation, an interpolation method for HARKinterpolation, etc. If you've
 found a technique useful in your own research and believe it could be of use
 to others on entirely different projects, then it probably belongs in HARK.
@@ -1129,9 +1129,9 @@ optimization techniques available, including global and/or stochastic search
 methods. We believe that additional optimizers are "low hanging fruit" as
 straightforward contributions to HARK and thus will be added in the near
 future. Moreover, there are plenty of distributions that have no approximator
-in HARKutilities (or data generator in HARKsimulation), and these functions
+in HARK.utilities (or data generator in HARKsimulation), and these functions
 are among the easiest for new contributors to write. The data analysis tools
-in HARKutilities only include functions that we happened to use for our
+in HARK.utilities only include functions that we happened to use for our
 current research projects, and we expect that this will be the mode of growth
 for future tools. There are some obvious holes that we believe will be filled
 quite quickly; for example, we provide a rudimentary non-parametric kernel
