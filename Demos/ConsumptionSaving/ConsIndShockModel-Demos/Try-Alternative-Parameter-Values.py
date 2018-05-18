@@ -8,7 +8,6 @@ import sys
 import os
 import pylab # the plotting tools
 
-sys.path.insert(0, os.path.abspath('../../HARK/'))
 sys.path.insert(0, os.path.abspath('../..'))
 
 xPoints=100  # number of points at which to sample a function when plotting it using pylab

@@ -10,7 +10,6 @@ factor seems to be around P/2, where P is the number of processors.
 import sys
 import os
 sys.path.insert(0, os.path.abspath('../'))
-sys.path.insert(0, os.path.abspath('../HARK/'))
 sys.path.insert(0, os.path.abspath('../ConsumptionSaving'))
 sys.path.insert(0, os.path.abspath('./'))
 

@@ -8,9 +8,8 @@ preferences each style), and pay switching costs if they change.
 import sys
 import os
 sys.path.insert(0, os.path.abspath('../../'))
-sys.path.insert(0, os.path.abspath('../../HARK/'))
 
-from HARKcore import AgentType, Solution, NullFunc
+from HARK.core import AgentType, Solution, NullFunc
 from HARK.interpolation import LinearInterp
 from HARK.utilities import approxUniform, plotFuncs
 import numpy as np
@@ -413,7 +412,7 @@ def calcFashionEvoFunc(pNow):
 ###############################################################################
 if __name__ == '__main__':
     from time import clock
-    from HARKcore import Market
+    from HARK.core import Market
     mystr = lambda number : "{:.4f}".format(number)
     import matplotlib.pyplot as plt
     from copy import deepcopy

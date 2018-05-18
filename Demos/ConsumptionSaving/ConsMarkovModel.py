@@ -6,14 +6,13 @@ distribution can vary with the discrete state.
 '''
 import sys
 sys.path.insert(0, '../../')
-sys.path.insert(0, '../../HARK/')
 
 from copy import deepcopy
 import numpy as np
 from ConsIndShockModel import ConsIndShockSolver, ValueFunc, MargValueFunc, ConsumerSolution, IndShockConsumerType
 from ConsAggShockModel import AggShockConsumerType
 from HARK.utilities import combineIndepDstns, warnings  # Because of "patch" to warnings modules
-from HARKcore import Market, HARKobject
+from HARK.core import Market, HARKobject
 from HARK.simulation import drawDiscrete, drawUniform
 from HARK.interpolation import CubicInterp, LowerEnvelope, LinearInterp
 from HARK.utilities import CRRAutility, CRRAutilityP, CRRAutilityPP, CRRAutilityP_inv, \

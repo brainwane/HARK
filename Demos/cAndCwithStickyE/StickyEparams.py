@@ -16,7 +16,6 @@ the Market instance as well as the consumers themselves.  All parameters are qua
 import sys
 import os
 sys.path.insert(0, os.path.abspath('../../'))
-sys.path.insert(0, os.path.abspath('../../HARK/'))
 
 import numpy as np
 from copy import copy
