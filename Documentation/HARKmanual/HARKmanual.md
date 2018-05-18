@@ -1,22 +1,22 @@
-## A User's Guide for HARK:  
+## A User's Guide for HARK:
 Heterogeneous Agents Resources and toolKit
 
 August 30, 2017
 
 
 
-Christopher D Carroll1  
-Johns Hopkins University  
-Alexander M Kaufman2  
-Consumer Financial Protection Bureau  
-David C Low3  
-Consumer Financial Protection Bureau  
-Nathan M Palmer4  
-U.S. Treasury Office of Financial Research  
-Matthew N White5  
+Christopher D Carroll1
+Johns Hopkins University
+Alexander M Kaufman2
+Consumer Financial Protection Bureau
+David C Low3
+Consumer Financial Protection Bureau
+Nathan M Palmer4
+U.S. Treasury Office of Financial Research
+Matthew N White5
 University of Delaware
 
-  
+
 
 ![PIC](HARKmanual0x.png)
 
@@ -29,36 +29,36 @@ University of Delaware
 
 ### Contents
 
-1 Introduction  
- 1.1 Getting Started  
- 1.2 Structure of HARK  
- 1.3 Other Resources  
-2 General Purpose Tools  
- 2.1 HARKcore  
- 2.2 HARKutilities  
- 2.3 HARKinterpolation  
- 2.4 HARKsimulation  
- 2.5 HARKestimation  
- 2.6 HARKparallel  
-3 Microeconomics: the AgentType Class  
- 3.1 Attributes of an AgentType  
- 3.2 A Universal Solver  
- 3.3 The Flow of Time and Other Methods  
- 3.4 Sample Model: Perfect Foresight Consumption-Saving  
-4 Macroeconomics: the Market Class  
- 4.1 Down on the Farm  
- 4.2 Attributes of a Market  
- 4.3 Sample Model: FashionVictim  
-5 Contributing to HARK  
- 5.1 What Does HARK Want?  
- 5.2 Git and GitHub  
- 5.3 Submission Approval Process  
- 5.4 Naming Conventions  
- 5.5 Documentation Conventions  
-6 Future of HARK  
- 6.1 Future Tools  
- 6.2 Future Models  
- 6.3 Bounty Hunting  
+1 Introduction
+ 1.1 Getting Started
+ 1.2 Structure of HARK
+ 1.3 Other Resources
+2 General Purpose Tools
+ 2.1 HARKcore
+ 2.2 HARKutilities
+ 2.3 HARKinterpolation
+ 2.4 HARKsimulation
+ 2.5 HARKestimation
+ 2.6 HARKparallel
+3 Microeconomics: the AgentType Class
+ 3.1 Attributes of an AgentType
+ 3.2 A Universal Solver
+ 3.3 The Flow of Time and Other Methods
+ 3.4 Sample Model: Perfect Foresight Consumption-Saving
+4 Macroeconomics: the Market Class
+ 4.1 Down on the Farm
+ 4.2 Attributes of a Market
+ 4.3 Sample Model: FashionVictim
+5 Contributing to HARK
+ 5.1 What Does HARK Want?
+ 5.2 Git and GitHub
+ 5.3 Submission Approval Process
+ 5.4 Naming Conventions
+ 5.5 Documentation Conventions
+6 Future of HARK
+ 6.1 Future Tools
+ 6.2 Future Models
+ 6.3 Bounty Hunting
  6.4 All Aboard the Ark
 
 ### 1  Introduction
@@ -119,13 +119,13 @@ a few minutes. More information can be found in the README.md file in the HARK
 repository (step 4), but here is a quick version for those who want to jump
 right in:
 
-  1. Download Anaconda: Go to <https://www.continuum.io/downloads> and download Anaconda for your operating system; be sure to get the version for Python 2.7. 
-  2. Install Anaconda: Follow the easy instructions on that page to install Anaconda. 
-  3. Add extra packages: (optional) If you want to use HARK's multithreading feature, you need to add two packages that aren't part of the default Anaconda distribution. Simply open a command prompt and do conda install joblib and conda install dill, accepting defaults to install. 
+  1. Download Anaconda: Go to <https://www.continuum.io/downloads> and download Anaconda for your operating system; be sure to get the version for Python 2.7.
+  2. Install Anaconda: Follow the easy instructions on that page to install Anaconda.
+  3. Add extra packages: (optional) If you want to use HARK's multithreading feature, you need to add two packages that aren't part of the default Anaconda distribution. Simply open a command prompt and do conda install joblib and conda install dill, accepting defaults to install.
   4. Download HARK: Go to <https://github.com/econ-ark/HARK>, the home of the HARK repository. Click on the lime green button labeled "Clone or download" toward the upper right of the main panel, and select "Download ZIP".[3](HARKmanual3.html#fn3x0)
-  5. Unzip HARK: Unpack the HARK.zip file using any archive utility, like [Peazip](http://www.peazip.org/). Put the files anywhere you'd like, maintaining the internal directory structure. 
-  6. Run Spyder: Open a command prompt and do spyder. Spyder is an interactive development environment (IDE) for iPython, a slightly prettier, more interactive flavor of Python. 
-  7. Open a HARK module: Go to the directory where you put HARK and open any file with the .py extension; we recommend /ConsumptionSaving/ConsIndShockModel.py. 
+  5. Unzip HARK: Unpack the HARK.zip file using any archive utility, like [Peazip](http://www.peazip.org/). Put the files anywhere you'd like, maintaining the internal directory structure.
+  6. Run Spyder: Open a command prompt and do spyder. Spyder is an interactive development environment (IDE) for iPython, a slightly prettier, more interactive flavor of Python.
+  7. Open a HARK module: Go to the directory where you put HARK and open any file with the .py extension; we recommend /ConsumptionSaving/ConsIndShockModel.py.
   8. Run the module: Click on the green arrow "play" button toward the right side of the toolbar of icons at the top of the Spyder window (accept defaults if a dialogue box pops up). Congratulations! HARK is now up and running on your computer.
 
 If you followed our recommendation to try
@@ -163,9 +163,9 @@ OOP languages, OOP bundles together data and functions into objects. These can
 be accessed via: object_name.data and object_name.method_name(), respectively.
 For organizational purposes, definitions of multiple objects are stored in
 modules, which are simply files with a .py extension. Modules can be accessed
-in Python via:  
+in Python via:
 
-import module_name as import_name  
+import module_name as import_name
 
 This imports the module and gives it a local name of import_name. We can
 access a function within this module by simply typing:
@@ -173,11 +173,11 @@ import_name.function_name(). The following example will illustrate the usage
 of these commands. CRRAutility is the function object for calculating CRRA
 utility supplied by HARKutilities module. CRRAutility is called attributes of
 the module HARKutilities. In order to calculate CRRA utility with a
-consumption of 1 and a coefficient of risk aversion of 2 we run:  
+consumption of 1 and a coefficient of risk aversion of 2 we run:
 
 import HARKutilities as Hutil
 
-Hutil.CRRAutility(1,2)  
+Hutil.CRRAutility(1,2)
 
 Python modules in HARK can generally be categorized into three types: tools,
 models, and applications. Tool modules contain functions and classes with
@@ -227,18 +227,18 @@ In the incredibly unlikely scenario in which this document does not fill all
 of the gaps in your knowledge and answer any questions you might have while
 reading it, here is a collection of potentially helpful other resources.
 
-  * [Online documentation](https://econ-ark.github.io/HARK/) for HARK tool and model modules, produced using Sphinx. 
-  * A [tutorial on Python 2.7](https://docs.python.org/2.7/tutorial/), straight from the source. 
-  * [Wikipedia article on object-oriented programming](https://en.wikipedia.org/wiki/Object-oriented_programming), not the subject of an edit war. 
-  * [QuantEcon](http://quant-econ.net/), a collection of lectures on quantitative economic modeling from a couple of economists, which definitely in no way influenced HARK whatsoever. 
-  * A [tutorial on git](https://www.atlassian.com/git/tutorials/), the repository management and tracking system used by the HARK project, created by Linus Torvalds. 
-  * A [tutorial on GitHub](https://guides.github.com/activities/hello-world/), a website that provides a useful framework for git that makes it significantly more user-friendly, despised by Linus Torvalds. 
-  * [Wikipedia article on Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds), just in case. 
-  * The [homepage for NumPy](http://www.numpy.org/), a numerical package extensively used by HARK. 
-  * The [homepage for Sphinx](http://www.sphinx-doc.org/), a tool for producing HTML documentation. 
-  * A [collection of lecture notes](http://www.econ2.jhu.edu/people/ccarroll/public/lecturenotes/Consumption/) by Chris Carroll, to catch you up on the basics of consumption-saving models. 
-  * A [particular set of lecture notes](http://www.econ2.jhu.edu/people/ccarroll/SolvingMicroDSOPs/) by Chris Carroll, explaining many of the numeric techniques used in HARK and offering an example of a simple structural model that, in a stunning coincidence, is implemented in HARK as an example. 
-  * A [deep dive](http://www.econ2.jhu.edu/people/ccarroll/BufferStockTheory.pdf) into the theoretical foundations of buffer stock saving. Warning: dense. 
+  * [Online documentation](https://econ-ark.github.io/HARK/) for HARK tool and model modules, produced using Sphinx.
+  * A [tutorial on Python 2.7](https://docs.python.org/2.7/tutorial/), straight from the source.
+  * [Wikipedia article on object-oriented programming](https://en.wikipedia.org/wiki/Object-oriented_programming), not the subject of an edit war.
+  * [QuantEcon](http://quant-econ.net/), a collection of lectures on quantitative economic modeling from a couple of economists, which definitely in no way influenced HARK whatsoever.
+  * A [tutorial on git](https://www.atlassian.com/git/tutorials/), the repository management and tracking system used by the HARK project, created by Linus Torvalds.
+  * A [tutorial on GitHub](https://guides.github.com/activities/hello-world/), a website that provides a useful framework for git that makes it significantly more user-friendly, despised by Linus Torvalds.
+  * [Wikipedia article on Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds), just in case.
+  * The [homepage for NumPy](http://www.numpy.org/), a numerical package extensively used by HARK.
+  * The [homepage for Sphinx](http://www.sphinx-doc.org/), a tool for producing HTML documentation.
+  * A [collection of lecture notes](http://www.econ2.jhu.edu/people/ccarroll/public/lecturenotes/Consumption/) by Chris Carroll, to catch you up on the basics of consumption-saving models.
+  * A [particular set of lecture notes](http://www.econ2.jhu.edu/people/ccarroll/SolvingMicroDSOPs/) by Chris Carroll, explaining many of the numeric techniques used in HARK and offering an example of a simple structural model that, in a stunning coincidence, is implemented in HARK as an example.
+  * A [deep dive](http://www.econ2.jhu.edu/people/ccarroll/BufferStockTheory.pdf) into the theoretical foundations of buffer stock saving. Warning: dense.
 
 ### 2  General Purpose Tools
 
@@ -434,13 +434,13 @@ A discrete time model in our framework is characterized by a sequence of
 "periods" that the agent will experience. A well-formed instance of AgentType
 includes the following attributes:
 
-  * solveOnePeriod: A function, or a list of functions, representing the solution method for a single period of the agent's problem. The inputs passed to a solveOnePeriod function include all data that characterize the agent's problem in that period, including the solution to the subsequent period's problem (designated as solution_next). The output of these functions is a single Solution object, which can be passed to the solver for the previous period. 
-  * time_inv: A list of strings containing all of the variable names that are passed to at least one function in solveOnePeriod but do not vary across periods. Each of these variables resides in a correspondingly named attribute of the AgentType instance. 
+  * solveOnePeriod: A function, or a list of functions, representing the solution method for a single period of the agent's problem. The inputs passed to a solveOnePeriod function include all data that characterize the agent's problem in that period, including the solution to the subsequent period's problem (designated as solution_next). The output of these functions is a single Solution object, which can be passed to the solver for the previous period.
+  * time_inv: A list of strings containing all of the variable names that are passed to at least one function in solveOnePeriod but do not vary across periods. Each of these variables resides in a correspondingly named attribute of the AgentType instance.
   * time_vary: A list of strings naming the attributes of this instance that vary across periods. Each of these attributes is a list of period-specific values, which should be of the same length. If the solution method varies across periods, then 'solveOnePeriod' is an element of time_vary.[11](HARKmanual11.html#fn11x0)
-  * solution_terminal: An object representing the solution to the "terminal" period of the model. This might represent a known trivial solution that does not require numeric methods, the solution to some previously solved "next phase" of the model, a scrap value function, or an initial guess of the solution to an infinite horizon model. 
-  * pseudo_terminal: A Boolean flag indicating that solution_terminal is not a proper terminal period solution (rather an initial guess, "next phase" solution, or scrap value) and should not be reported as part of the model's solution. 
-  * cycles: A non-negative integer indicating the number of times the agent will experience the sequence of periods in the problem. For example, cycles = 1 means that the sequence of periods is analogous to a lifecycle model, experienced once from beginning to end; cycles = 2 means that the agent experiences the sequence twice, with the first period in the sequence following the last. An infinite horizon problem in which the sequence of periods repeats indefinitely is indicated with cycles = 0. 
-  * tolerance: A positive real number indicating convergence tolerance, representing the maximum acceptable "distance" between successive cycle solutions in an infinite horizon model; it is irrelevant when cycles > 0. As the distance metric on the space of solutions is model-specific, the value of tolerance is generally dimensionless. 
+  * solution_terminal: An object representing the solution to the "terminal" period of the model. This might represent a known trivial solution that does not require numeric methods, the solution to some previously solved "next phase" of the model, a scrap value function, or an initial guess of the solution to an infinite horizon model.
+  * pseudo_terminal: A Boolean flag indicating that solution_terminal is not a proper terminal period solution (rather an initial guess, "next phase" solution, or scrap value) and should not be reported as part of the model's solution.
+  * cycles: A non-negative integer indicating the number of times the agent will experience the sequence of periods in the problem. For example, cycles = 1 means that the sequence of periods is analogous to a lifecycle model, experienced once from beginning to end; cycles = 2 means that the agent experiences the sequence twice, with the first period in the sequence following the last. An infinite horizon problem in which the sequence of periods repeats indefinitely is indicated with cycles = 0.
+  * tolerance: A positive real number indicating convergence tolerance, representing the maximum acceptable "distance" between successive cycle solutions in an infinite horizon model; it is irrelevant when cycles > 0. As the distance metric on the space of solutions is model-specific, the value of tolerance is generally dimensionless.
   * time_flow: A Boolean flag indicating the direction that time is "flowing." When True, the variables listed in time_vary are listed in ordinary chronological order, with index 0 being the first period; when False, these lists are in reverse chronological order, with index 0 holding the last period.
 
 An instance of AgentType also has the attributes named in time_vary and
@@ -515,9 +515,9 @@ The attribute time_flow is True if variables are listed in ordinary
 chronological order and False otherwise. AgentType has the following methods
 for manipulating time:
 
-  * timeReport(): Prints to screen a description of the direction that time is flowing, for interactive convenience and as a reminder of the functionality. 
-  * timeFlip(): Flips the direction of time. Each attribute listed in time_vary is reversed in place, and the value of time_flow is toggled. 
-  * timeFwd(): Sets the direction of time to ordinary chronological order. 
+  * timeReport(): Prints to screen a description of the direction that time is flowing, for interactive convenience and as a reminder of the functionality.
+  * timeFlip(): Flips the direction of time. Each attribute listed in time_vary is reversed in place, and the value of time_flow is toggled.
+  * timeFwd(): Sets the direction of time to ordinary chronological order.
   * timeRev(): Sets the direction of time to reverse chronological order.
 
 These methods are invoked to more conveniently access time-varying objects.
@@ -610,10 +610,10 @@ attributes:
 MyConsumer.solution[0].cFunc(5) returns consumption at ![mt = 5
 ](HARKmanual12x.png).
 
-  * vFunc: Value function (over market resources ![mt  ](HARKmanual13x.png)); can be evaluated like cFunc. 
-  * mNrmMin: Minimum value of normalized market resources ![mt  ](HARKmanual14x.png) such that cFunc and vFunc are defined. 
-  * hNrm: Normalized human wealth- the PDV of future income (ignoring mortality) divided by current period income ![Yt  ](HARKmanual15x.png). 
-  * MPC: The constant marginal propensity to consume (linear consumption function). 
+  * vFunc: Value function (over market resources ![mt  ](HARKmanual13x.png)); can be evaluated like cFunc.
+  * mNrmMin: Minimum value of normalized market resources ![mt  ](HARKmanual14x.png) such that cFunc and vFunc are defined.
+  * hNrm: Normalized human wealth- the PDV of future income (ignoring mortality) divided by current period income ![Yt  ](HARKmanual15x.png).
+  * MPC: The constant marginal propensity to consume (linear consumption function).
 
 The following command generates the plot for the perfect foresight consumption
 function:
@@ -685,10 +685,10 @@ orientation.
 To generate a history of macroeconomic outcomes, the Market repeatedly loops
 over the following steps a set number of times:
 
-  1. sow: Distribute the macroeconomic state variables to all AgentTypes in the market. 
-  2. cultivate: Each AgentType executes their marketAction method, likely corresponding to simulating one period of the microeconomic model. 
-  3. reap: Microeconomic outcomes are gathered from each AgentType in the market. 
-  4. mill: Data gathered by reap is processed into new macroeconomic states according to some "aggregate market process". 
+  1. sow: Distribute the macroeconomic state variables to all AgentTypes in the market.
+  2. cultivate: Each AgentType executes their marketAction method, likely corresponding to simulating one period of the microeconomic model.
+  3. reap: Microeconomic outcomes are gathered from each AgentType in the market.
+  4. mill: Data gathered by reap is processed into new macroeconomic states according to some "aggregate market process".
   5. store: Relevant macroeconomic states are added to a running history of outcomes.
 
 This procedure is conducted by the makeHistory method of Market as a
@@ -705,21 +705,21 @@ dynamic rules is sufficiently small.
 To specify a complete instance of Market, the user should give it the
 following attributes:[16](HARKmanual16.html#fn16x0)
 
-  * agents: A list of AgentTypes, representing the agents in the market. Each element in agents represents an ex-ante heterogeneous type; each type could have many ex-post heterogeneous agents. 
-  * sow_vars: A list of strings naming variables that are output from the aggregate market process, representing the macroeconomic outcomes. These variables will be distributed to the agents in the sow step. 
-  * reap_vars: A list of strings naming variables to be collected from the agents in the reap step, to be used as inputs for the aggregate market process. 
-  * const_vars: A list of strings naming variables used by the aggregate market process that do not come from agents; they are constant or come from the Market itself. 
-  * track_vars: A list of strings naming variables generated by the aggregate market process that should be tracked as a history, to be used when calculating a new dynamic rule. Usually a subset of sow_vars. 
-  * dyn_vars: A list of strings naming the variables that constitute a dynamic rule. These will be stored as attributes of the agents whenever a new rule is calculated. 
-  * millRule: A function for the "aggregate market process", transforming microeconomic outcomes into macroeconomic outcomes. Its inputs are named in reap_vars and const_vars, and it returns a single object with attributes named in sow_vars and/or track_vars. Can be defined as a method of a subclass of Market. 
-  * calcDynamics: A function that generates a new dynamic rule from a history of macroeconomic outcomes. Its inputs are named in track_vars, and it returns a single object with attributes named in dyn_vars. 
-  * act_T: The number of times that the makeHistory method should execute the "farming loop" when generating a new macroeconomic history. 
+  * agents: A list of AgentTypes, representing the agents in the market. Each element in agents represents an ex-ante heterogeneous type; each type could have many ex-post heterogeneous agents.
+  * sow_vars: A list of strings naming variables that are output from the aggregate market process, representing the macroeconomic outcomes. These variables will be distributed to the agents in the sow step.
+  * reap_vars: A list of strings naming variables to be collected from the agents in the reap step, to be used as inputs for the aggregate market process.
+  * const_vars: A list of strings naming variables used by the aggregate market process that do not come from agents; they are constant or come from the Market itself.
+  * track_vars: A list of strings naming variables generated by the aggregate market process that should be tracked as a history, to be used when calculating a new dynamic rule. Usually a subset of sow_vars.
+  * dyn_vars: A list of strings naming the variables that constitute a dynamic rule. These will be stored as attributes of the agents whenever a new rule is calculated.
+  * millRule: A function for the "aggregate market process", transforming microeconomic outcomes into macroeconomic outcomes. Its inputs are named in reap_vars and const_vars, and it returns a single object with attributes named in sow_vars and/or track_vars. Can be defined as a method of a subclass of Market.
+  * calcDynamics: A function that generates a new dynamic rule from a history of macroeconomic outcomes. Its inputs are named in track_vars, and it returns a single object with attributes named in dyn_vars.
+  * act_T: The number of times that the makeHistory method should execute the "farming loop" when generating a new macroeconomic history.
   * tolerance: The minimum acceptable "distance" between successive dynamic rules produced by calcDynamics to constitute a sufficiently converged solution.
 
 Further, each AgentType in agents must have two methods not necessary for
 microeconomic models; neither takes any input (except self):
 
-  * marketAction: The microeconomic process to be run in the cultivate step. Likely uses the new macroeconomic outcomes named in sow_vars; should store new values of relevant microeconomic outcomes in the attributes (of self) named in reap_vars. 
+  * marketAction: The microeconomic process to be run in the cultivate step. Likely uses the new macroeconomic outcomes named in sow_vars; should store new values of relevant microeconomic outcomes in the attributes (of self) named in reap_vars.
   * reset: Reset, initialize, or prepare for a new "farming loop" to generate a macroeconomic history. Might reset its internal random number generator, set initial state varibles, clear personal histories, etc.
 
 When solving macroeconomic models in HARK, the user should also define classes
@@ -772,8 +772,8 @@ V\(st-1,pt\) = E  smt∈a{x0,1}u \(st;st-1,pt\) + ηst + βE \[V \(st,pt+1\)\] ,
 
 ![pt+1 =  apt + b + πt+1,    πt+1 ~  U\[- w,w \],    η0,η1 ~ T 1EV.
 
-                                                                                        
-                                                                                        
+
+
 ](HARKmanual28x.png)
 
 An instance of FashionVictimType is thus characterized by values of ![Up
@@ -918,8 +918,8 @@ to interact with (and potentially contribute to) HARK.
 To prepare to contribute to HARK, follow these simple steps:
 
   1. Make a GitHub account: Go to [github.com](https://www.github.com); the homepage should prompt you to choose a username and password. Signing up is quick, easy, and free.[24](HARKmanual24.html#fn24x0)
-  2. Install GitHub Desktop: Go to [desktop.github.com](https://desktop.github.com/) and download the Desktop application for your operating system, then install it. After opening Desktop for the first time, enter your GitHub login to connect it to your account. 
-  3. Fork the HARK repository: Go to the [HARK repository page](https://github.com/econ-ark/HARK), click on the Fork button in the upper right, and choose to fork HARK to your own GitHub account. This creates a new repository identical to the one hosted by Econ-Ark at the moment you fork it, but hosted on your account instead. 
+  2. Install GitHub Desktop: Go to [desktop.github.com](https://desktop.github.com/) and download the Desktop application for your operating system, then install it. After opening Desktop for the first time, enter your GitHub login to connect it to your account.
+  3. Fork the HARK repository: Go to the [HARK repository page](https://github.com/econ-ark/HARK), click on the Fork button in the upper right, and choose to fork HARK to your own GitHub account. This creates a new repository identical to the one hosted by Econ-Ark at the moment you fork it, but hosted on your account instead.
   4. Add the repository to Desktop: Open GitHub Desktop, click on the ![+  ](HARKmanual61x.png) icon in the upper left, and select clone. Find the repository named yourusername/HARK, click the Clone button at the bottom of the dialogue window, and choose a directory on your local machine.
 
 You now control a "fork" of the main HARK repository, hosted by GitHub, and
@@ -931,8 +931,8 @@ copy of your fork do not get automatically sent to the remote copy on GitHub
 for public viewing. To make changes to your fork on GitHub, follow these
 steps:
 
-  1. Make local changes: Edit your local copy of the repository in any way you'd like: add or delete lines from existing files; add, delete, or rename entire files or directories. 
-  2. Commit local changes: Open the repository in GitHub Desktop and click on the Changes tab. In the lower left, provide a short description of the changes made in the Summary field, and (optionally) longer comments about these changes in the Description field. Click the check-mark Commit button. 
+  1. Make local changes: Edit your local copy of the repository in any way you'd like: add or delete lines from existing files; add, delete, or rename entire files or directories.
+  2. Commit local changes: Open the repository in GitHub Desktop and click on the Changes tab. In the lower left, provide a short description of the changes made in the Summary field, and (optionally) longer comments about these changes in the Description field. Click the check-mark Commit button.
   3. Push the commit: Click on the Sync button near the upper right to "push" your local commits to the remote server; this will also pull down remote commits from other contributors to your fork that were made since the last time you synced.
 
 The left hand panel of the Changes tab has a summary of the files that have
@@ -952,9 +952,9 @@ Suppose you have mucked about in your fork for a while and have made changes
 to HARK that you think should be included in the main repository hosted by
 Econ-Ark. To make your dream a reality, follow these steps:
 
-  1. Isolate the changes: If you mucked around for quite a while, making various changes here and there, and then later made some contribution that you want to include in the main repository, you should isolate the desired changes in a new branch of your fork. Make a new branch by clicking the button toward the upper left of GitHub Desktop, revert that branch to the commit just before you forked from the main repository,[27](HARKmanual27.html#fn27x0) then edit this branch to include only the changes you want to push to the main repository. 
-  2. Issue a pull request: Go to [HARK's GitHub page](https://github.com/econ-ark/HARK) and click the "New pull request" button. Click the text that says "compare across forks", and select econ-ark/HARK as the base fork, master as the base, your fork as the head fork, and the branch to be merged as the "compare". In the boxes below, give a name to your pull request and provide sufficient comments about your contribution so that a development team member can understand what you've done. Click the "Create pull request" button. 
-  3. Be patient: Someone from the development team will look at your contribution and either merge it into the main repository or return it with comments. See section 5.3 for procedures followed by the HARK team when evaluating outside contributions. 
+  1. Isolate the changes: If you mucked around for quite a while, making various changes here and there, and then later made some contribution that you want to include in the main repository, you should isolate the desired changes in a new branch of your fork. Make a new branch by clicking the button toward the upper left of GitHub Desktop, revert that branch to the commit just before you forked from the main repository,[27](HARKmanual27.html#fn27x0) then edit this branch to include only the changes you want to push to the main repository.
+  2. Issue a pull request: Go to [HARK's GitHub page](https://github.com/econ-ark/HARK) and click the "New pull request" button. Click the text that says "compare across forks", and select econ-ark/HARK as the base fork, master as the base, your fork as the head fork, and the branch to be merged as the "compare". In the boxes below, give a name to your pull request and provide sufficient comments about your contribution so that a development team member can understand what you've done. Click the "Create pull request" button.
+  3. Be patient: Someone from the development team will look at your contribution and either merge it into the main repository or return it with comments. See section 5.3 for procedures followed by the HARK team when evaluating outside contributions.
 
 #### 5.3  Submission Approval Process
 
@@ -976,13 +976,13 @@ After creating a pull request to submit your contribution, it will be
 evaluated by one or more members of the HARK team. Criteria that the HARK team
 will consider when choosing whether to accept a submission include:
 
-  1. Does the contribution break previous code? If you change or expand an existing function, you should make sure that this does not cause some models or applications to work incorrectly. In the near future, HARK will have a core set of tests to run to check for full compatibility. 
-  2. Is the code well documented? Code submissions should have properly formatted docstrings for each new function, class, method, and module (see section 5.5) and enough comments for a reader to follow the algorithm. 
-  3. Is the contribution relevant? The development team intends for HARK to be diverse, but not everything goes in HARK. If your submission concerns a representative agent model or a method for estimating a reduced form model, then it probably doesn't belong in HARK. 
+  1. Does the contribution break previous code? If you change or expand an existing function, you should make sure that this does not cause some models or applications to work incorrectly. In the near future, HARK will have a core set of tests to run to check for full compatibility.
+  2. Is the code well documented? Code submissions should have properly formatted docstrings for each new function, class, method, and module (see section 5.5) and enough comments for a reader to follow the algorithm.
+  3. Is the contribution relevant? The development team intends for HARK to be diverse, but not everything goes in HARK. If your submission concerns a representative agent model or a method for estimating a reduced form model, then it probably doesn't belong in HARK.
   4. Is the code demonstrated with an example? If your solve a new model in HARK, you should include a set of example parameters for other users to easily test. If you've contributed a new function, consider providing a snippet of code demonstrating its use.[29](HARKmanual29.html#fn29x0)
-  5. Is the code correct? Your code should actually do what it claims to do. 
-  6. Does the code use HARK conventions? To the best of your ability, contributions to HARK should follow the style guidelines in section 5.4. We don't demand perfection, as these are guidelines rather than rules. 
-  7. Is the code well integrated in HARK? In the beta release of HARK, we have tried to present a "taxonomy" of consumption-saving models that build up from each other. When possible, new models in HARK should try to continue this pattern. A submission that introduces a model in a new module that could have easily been made as an extension of an existing module might be rejected. However, we acknowledge that there is value in providing a solver for a new model, and that a future contributor might make her mark by integrating it into the existing hierarchy. 
+  5. Is the code correct? Your code should actually do what it claims to do.
+  6. Does the code use HARK conventions? To the best of your ability, contributions to HARK should follow the style guidelines in section 5.4. We don't demand perfection, as these are guidelines rather than rules.
+  7. Is the code well integrated in HARK? In the beta release of HARK, we have tried to present a "taxonomy" of consumption-saving models that build up from each other. When possible, new models in HARK should try to continue this pattern. A submission that introduces a model in a new module that could have easily been made as an extension of an existing module might be rejected. However, we acknowledge that there is value in providing a solver for a new model, and that a future contributor might make her mark by integrating it into the existing hierarchy.
   8. Is this already in HARK? If your contribution is already in HARK, then it will almost certainly be rejected. Of course, if you submit a version that dominates the existing implementation (or even one that works better in a well described, non-trivial set of circumstances), it belongs in HARK.
 
 The HARK team intends to release more specific guidelines in the near future,
@@ -1000,9 +1000,9 @@ Object naming conventions in HARK are fairly different than existing
 standards, and differ somewhat between tool modules vs model or application
 modules. The following conventions apply throughout HARK:
 
-  * Functions and methods are always in "camel case": no underscores, first letter is lower case, first letter of each subsequent word is capitalized. E.g. approxLognormal. 
+  * Functions and methods are always in "camel case": no underscores, first letter is lower case, first letter of each subsequent word is capitalized. E.g. approxLognormal.
   * Function and method names should accurately and concisely describe what the function does; the first word in the name must be a verb.[31](HARKmanual31.html#fn31x0)
-  * Variable and class names should not have a verb as their first word. 
+  * Variable and class names should not have a verb as their first word.
   * Class names should use no underscores and capitalize the first letter of each word; moreover, a class name must include a noun. E.g. ConsPerfForesightSolver.
 
 When naming variables in model modules, the HARK team strongly discourages
@@ -1055,7 +1055,7 @@ model. Your bank account routing number.
 
 """
 
-  * The line directly below the declaration of a function, method or class should begin a docstring describing that object. As with modules, the first sentence should concisely summarize the function or class, as it might be included in an index or summary. For functions and methods, the docstring should be formatted as: 
+  * The line directly below the declaration of a function, method or class should begin a docstring describing that object. As with modules, the first sentence should concisely summarize the function or class, as it might be included in an index or summary. For functions and methods, the docstring should be formatted as:
 
 def functionName(input1,input2):
 
@@ -1165,16 +1165,16 @@ small subset of all dynamic models economists might be interested in).
 Consider some examples of variants, features, and extensions that are not
 included in HARK, but could be in the future:
 
-  * Consumers with other utility functions, such as CARA or expo-power. 
-  * Consumers with time-inconsistent preferences, e.g. hyperbolic discounting. 
-  * Income shocks that are neither fully transitory nor fully permanent. 
-  * Consumers with a bequest motive or terminal utility function. 
-  * Utility from leisure and endogenous labor supply. 
-  * Investment in a durable consumption good such as housing. 
-  * Exogenous shocks to expenses. 
-  * Multiple consumption goods, as with endogenous medical care. 
-  * Portfolio allocation between a risky and riskless asset. 
-  * Job search intensity as a control variable. 
+  * Consumers with other utility functions, such as CARA or expo-power.
+  * Consumers with time-inconsistent preferences, e.g. hyperbolic discounting.
+  * Income shocks that are neither fully transitory nor fully permanent.
+  * Consumers with a bequest motive or terminal utility function.
+  * Utility from leisure and endogenous labor supply.
+  * Investment in a durable consumption good such as housing.
+  * Exogenous shocks to expenses.
+  * Multiple consumption goods, as with endogenous medical care.
+  * Portfolio allocation between a risky and riskless asset.
+  * Job search intensity as a control variable.
   * Endogenous health evolution and health investment.
 
 The HARK team is currently developing a module for mixing discrete and
@@ -1182,11 +1182,11 @@ continuous choice models, in the style of Jorgensen, Rust, Iskhakov, and
 Schjerning (2015). Among many other models, this framework will enable HARK
 users to easily develop features like:
 
-  * Labor supply on the extensive margin: the timing of retirement. 
-  * Selection of job type or sector (by riskiness, specific human capital, etc). 
-  * Choice of medical insurance contract. 
-  * Decision to rent or own housing. 
-  * Endogenous default on debt (with "macroeconomic" pricing of debt). 
+  * Labor supply on the extensive margin: the timing of retirement.
+  * Selection of job type or sector (by riskiness, specific human capital, etc).
+  * Choice of medical insurance contract.
+  * Decision to rent or own housing.
+  * Endogenous default on debt (with "macroeconomic" pricing of debt).
   * Household formation, dissolution, and reproduction.
 
 Finally, we hope to provide a generic solver for any discrete choice model
