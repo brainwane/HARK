@@ -40,7 +40,7 @@ University of Delaware
  2.1 HARKcore
  2.2 HARK.utilities
  2.3 HARKinterpolation
- 2.4 HARKsimulation
+ 2.4 HARK.simulation
  2.5 HARKestimation
  2.6 HARK.parallel
 3 Microeconomics: the AgentType Class
@@ -191,7 +191,7 @@ for data analysis (e.g. calculating Lorenz shares from data, or constructing a
 non-parametric kernel regression), functions to create and manipulate discrete
 approximations to continuous distributions, or classes for constructing
 interpolated approximations to non-parametric functions. Tool modules
-generally reside in HARK's root directory and have names like HARKsimulation
+generally reside in HARK's root directory and have names like HARK.simulation
 and HARKinterpolation; they do not necessarily do anything when run.
 
 Model modules specify particular economic models, including classes to
@@ -377,9 +377,9 @@ over 3D interpolations, 2D curvilinear interpolation over irregular grids, and
 a 1D "lower envelope" interpolator. See [here](https://econ-
 ark.github.io/HARK/generated/HARKinterpolation.html) for online documentation.
 
-#### 2.4  HARKsimulation
+#### 2.4  HARK.simulation
 
-The HARKsimulation module provides tools for generating simulated data or
+The HARK.simulation module provides tools for generating simulated data or
 shocks for post-solution use of models. Currently implemented distributions
 include normal, lognormal, Weibull (including exponential), uniform,
 Bernoulli, and discrete. As an example of their use, these tools are used in
@@ -1129,7 +1129,7 @@ optimization techniques available, including global and/or stochastic search
 methods. We believe that additional optimizers are "low hanging fruit" as
 straightforward contributions to HARK and thus will be added in the near
 future. Moreover, there are plenty of distributions that have no approximator
-in HARK.utilities (or data generator in HARKsimulation), and these functions
+in HARK.utilities (or data generator in HARK.simulation), and these functions
 are among the easiest for new contributors to write. The data analysis tools
 in HARK.utilities only include functions that we happened to use for our
 current research projects, and we expect that this will be the mode of growth
