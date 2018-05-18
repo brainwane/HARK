@@ -9,7 +9,6 @@ distance method from HARKobject.
 
 import warnings
 import numpy as np
-from scipy.interpolate import UnivariateSpline
 from HARKcore import HARKobject
 from copy import deepcopy
 
