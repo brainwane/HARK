@@ -5,16 +5,18 @@ include *.md
 include LICENSE
 
 # include everything in the root
-include *
+include HARK
+include requirements.txt
+include setup.py
+include MANIFEST.in
+include setup.cfg
 
 # Include most files
-recursive-include ConsumptionSaving *
+# recursive-include ConsumptionSaving *
 recursive-include Demos *
-recursive-include dist *
-recursive-include Documentation *
-recursive-include FashionVictim *
-recursive-include SolvingMicroDSOPs *
-recursive-include Testing *
+# recursive-include dist *
+# recursive-include FashionVictim *
+# recursive-include SolvingMicroDSOPs *
 
 # We plan to store the full archive of a paper implemented in Econ-ARK
 # separately from the codebase that reproduces the paper's results.
