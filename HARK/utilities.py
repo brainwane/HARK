@@ -8,7 +8,16 @@ from __future__ import division     # Import Python 3.x division function
 import functools
 import warnings
 import numpy as np                  # Python's numeric library, abbreviated "np"
-import pylab as plt                 # Python's plotting library
+try:
+    import pylab as plt                 # Python's plotting library
+except ImportError:
+    import sys
+    exception_type, value, traceback = sys.exc_info()
+    raise ImportError, (
+                'HARK must be used in a graphical environment.',
+                exception_type,
+                value
+        ), traceback
 import scipy.stats as stats         # Python's statistics library
 from scipy.interpolate import interp1d
 from scipy.special import erf, erfc
