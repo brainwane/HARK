@@ -33,20 +33,14 @@ drop_corner : Boolean for whether to include target MPC in the top left corner,
               because this target tends to push the estimate around a bit.
 '''
 
-import sys
-import os
-sys.path.insert(0, os.path.abspath('../'))
-sys.path.insert(0, os.path.abspath('../../../'))
-sys.path.insert(0, os.path.abspath('../../cstwMPC'))
-
 import numpy as np
 from copy import deepcopy
 
 from HARK.utilities import approxUniform, getPercentiles
 from HARK.parallel import multiThreadCommands
 from HARK.estimation import minimizeNelderMead
-from ConsIndShockModel import IndShockConsumerType
-from SetupParamsCSTW import init_infinite # dictionary with most ConsumerType parameters
+from Demos.ConsumptionSaving.ConsIndShockModel import IndShockConsumerType
+from Demos.cstwMPC.SetupParamsCSTW import init_infinite # dictionary with most ConsumerType parameters
 
 TypeCount = 8    # Number of consumer types with heterogeneous discount factors
 AdjFactor = 1.0  # Factor by which to scale all of Fagereng's MPCs in Table 9

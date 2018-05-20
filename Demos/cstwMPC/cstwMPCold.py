@@ -6,15 +6,6 @@ ConsIndShockModel; the macro model is ConsAggShockModel.  See SetupParamsCSTW
 for parameters and execution options.
 '''
 
-# Import the HARK library.  The assumption is that cstwMPCold.py is in a
-# folder contained in a folder which has the HARK folder as a peer:
-# ./HARK/
-# ./Demos/cstwMPC/cstwMPCold.py
-import sys
-import os
-sys.path.insert(0, os.path.abspath('../../'))
-sys.path.insert(0, os.path.abspath('../ConsumptionSaving'))
-
 import numpy as np
 from copy import deepcopy
 from time import time
@@ -24,8 +15,8 @@ from HARK.simulation import drawDiscrete, drawMeanOneLognormal
 from HARK.core import AgentType
 from HARK.parallel import multiThreadCommandsFake
 import SetupParamsCSTW as Params
-import ConsIndShockModel as Model
-from ConsAggShockModel import CobbDouglasEconomy, AggShockConsumerType
+import Demos.ConsumptionSaving.ConsIndShockModel as Model
+from Demos.ConsumptionSaving.ConsAggShockModel import CobbDouglasEconomy, AggShockConsumerType
 from scipy.optimize import golden, brentq
 import matplotlib.pyplot as plt
 import csv
@@ -639,7 +630,7 @@ if __name__ == "__main__":
         # If you want this to work, you must edit TractableBufferStockModel slightly.
         # See comments around line 34 in that module for instructions.
         if Params.do_tractable:
-            from TractableBufferStockModel import TractableConsumerType
+            from Demos.ConsumptionSaving.TractableBufferStockModel import TractableConsumerType
             TractableInfType = TractableConsumerType(DiscFac=0.99, # will be overwritten
                                                      UnempPrb=1-InfiniteType.LivPrb[0],
                                                      Rfree=InfiniteType.Rfree,

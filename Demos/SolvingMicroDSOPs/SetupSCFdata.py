@@ -2,15 +2,7 @@
 Sets up the SCF data for use in the SolvingMicroDSOPs estimation.
 '''
 from __future__ import division      # Use new division function
-
-# Import the HARK library.  The assumption is that SetupSCFdata.py is in a
-# folder contained in a folder which has the HARK folder as a peer:
-# ./HARK/
-# ./Demos/SolvingMicroDSOPs/SetupSCFdata.py
-import sys
 import os
-sys.path.insert(0, os.path.abspath('../../'))
-
 
 # The following libraries are part of the standard python distribution
 import numpy as np                   # Numerical Python
